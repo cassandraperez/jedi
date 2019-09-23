@@ -13,5 +13,9 @@
 <% end %>
 
 
-
-<%= will_paginate @places %>
+<div class="numbers">
+    <div class="page_info">
+      <%= page_entries_info @places %>
+    </div>
+    <%= will_paginate @places, :container => false %>
+  </div>
