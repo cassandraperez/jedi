@@ -14,6 +14,11 @@
     #map {
       height: 100%;
     }
+
+    .thepic{
+      height: 600;
+      width: 400;
+    }
   </style>
    
 
@@ -182,7 +187,7 @@
 
 <div class="row col-10 offset-1">
 <% @place.photos.each do |photo| %>
-  <div class="col-4 col-sm-2">
+  <div class="col-4 col-sm-2" >
     <%= image_tag photo.picture.to_s, class: 'img-fluid' %>
     <b><%= photo.caption %></b>
   </div>
