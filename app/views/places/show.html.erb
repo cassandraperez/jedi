@@ -11,20 +11,21 @@
       margin: 0;
       padding: 0;
     }
-    #map {
-      height: 100%;
+    .themap {
+      height: 200%;
+      width: 200%;
     }
 
     .thepic{
-      height: 600;
-      width: 400;
+      height: 100%;
+      width: 100%;
     }
   </style>
    
 
    </head>
   <body>
-  <div id="map"></div>
+  <div id="themap"></div>
 
   <% if @place.latitude.present? && @place.longitude.present? %>
 
@@ -157,7 +158,7 @@
 
 <div class="row">
   <% @place.comments.each do |comment| %>
-    <div class="col-12 col-sm-6">
+    <div class="col-12 offset-1 col-sm-6">
       <blockquote>
         <% if comment.humanized_rating.present? %>
           <b><%= comment.humanized_rating %></b> -
@@ -183,11 +184,11 @@
 
 <br /><br />
 
-<div class="clear"></div>
+<div class="clear" ></div>
 
-<div class="row col-10 offset-1">
+<div class="row col-10 offset-1" >
 <% @place.photos.each do |photo| %>
-  <div class="col-4 col-sm-2" >
+  <div class="col-6 col-sm-6" >
     <%= image_tag photo.picture.to_s, class: 'img-fluid' %>
     <b><%= photo.caption %></b>
   </div>
